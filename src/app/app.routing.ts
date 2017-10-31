@@ -8,6 +8,7 @@ import {
 } from './containers';
 
 export const routes: Routes = [
+
   {
     path: '',
     redirectTo: 'dashboard',
@@ -23,6 +24,19 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
+      }
+    ]
+	},
+	{
+    path: '',
+    component: FullLayoutComponent,
+    data: {
+      title: 'Entry'
+    },
+    children: [
+      {
+        path: 'entry',
+        loadChildren: './views/entry/entry.module#EntryModule'
       }
     ]
   }
